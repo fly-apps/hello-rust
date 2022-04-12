@@ -7,7 +7,9 @@ COPY Cargo.toml Cargo.lock ./
 # Needs at least a main.rs file with a main function
 RUN mkdir src && echo "fn main(){}" > src/main.rs
 # Will build all dependent crates in release mode
-RUN cargo build --release
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,target=/usr/src/app/target \
+    cargo build --release
 
 # Copy the rest
 COPY . .
