@@ -35,9 +35,9 @@ cmd = "./hello" # should be the name of the binary you want to run
 The most efficient way to create a Docker image for a Rust app is a simple Dockerfile.
 
 Our `Dockerfile` is heavily commented, but here's a short rundown:
+
 - Copy `Cargo.{toml,lock}` and build dependencies
 - Copy whole project and `cargo install` it
-- 
 
 #### .dockerignore
 
@@ -52,4 +52,3 @@ flyctl deploy
 ```
 
 ... will bring up your app!
-
