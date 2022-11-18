@@ -45,11 +45,7 @@ You definitely want to ignore `/target` since this can get pretty hefty, adding 
 
 ## Deploy
 
-Once you've went through the steps of `flyctl init`:
-
 ```
-flyctl deploy
+fly launch
 ```
-
-... will bring up your app!
 
