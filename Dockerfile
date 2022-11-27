@@ -14,7 +14,9 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
 # Copy the rest
 COPY . .
 # Build (install) the actual binaries
-RUN cargo install --path .
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,target=/usr/src/app/target \
+    cargo install --path .
 
 # Runtime image
 FROM debian:bullseye-slim
