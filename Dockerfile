@@ -19,4 +19,5 @@ WORKDIR /app
 # Get compiled binaries from builder's cargo install directory
 COPY --from=builder /usr/src/app/hello /app/hello
 
-# No CMD or ENTRYPOINT, see fly.toml with `cmd` override.
+# Run the app
+CMD ./hello
